@@ -112,8 +112,8 @@ namespace QMClock
                 return false;
             }
 
-            _panelRoot = debugPanelComponent.Panel;
-            _pingText = debugPanelComponent.PingText.gameObject;
+            _panelRoot = debugPanelComponent.field_Public_GameObject_0;
+            _pingText = debugPanelComponent.field_Public_TextBinding_0.gameObject;
             GameObject debugPanelBG = _panelRoot.transform.Find("Background").gameObject;
 
             if (debugPanelBG == null || _pingText == null)
@@ -173,7 +173,7 @@ namespace QMClock
         
         private IEnumerator WaitForQMInit()
         {
-            while (UIManager.Instance == null) yield return null;
+            while (UIManager.field_Private_Static_UIManager_0 == null) yield return null;
             while (Object.FindObjectOfType<QuickMenu>() == null) yield return null;
             
             SetupPostQMInit();
