@@ -29,6 +29,8 @@ namespace QMClock
         private readonly string _prefs12HourClock = "12HourClock";
         private readonly string _prefsShowsSeconds = "ShowSeconds";
 
+        private const float SizePerElement = 140f;
+        
         private TMP_Text _clock;
         
         //Reference GameObjects
@@ -151,7 +153,7 @@ namespace QMClock
             
             RectTransform debugPanelRect = _panelRoot.GetComponent<RectTransform>();
             Vector2 adjust = debugPanelRect.sizeDelta;
-            adjust.x = 150f*_panelRoot.transform.childCount;
+            adjust.x = SizePerElement*_panelRoot.transform.childCount;
             debugPanelRect.sizeDelta = adjust;
         }
         
