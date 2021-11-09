@@ -17,7 +17,7 @@ namespace QMClock
         public const string Name = "QMClock"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "DDAkebono#0001"; // Author of the Mod.  (Set as null if none)
         public const string Company = "BTK-Development"; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "1.0.0"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "1.0.1"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
     
@@ -175,8 +175,10 @@ namespace QMClock
         
         private IEnumerator WaitForQMInit()
         {
+            Log.Msg("WaitForQMInit");
+            
             while (UIManager.field_Private_Static_UIManager_0 == null) yield return null;
-            while (Object.FindObjectOfType<QuickMenu>() == null) yield return null;
+            while (Object.FindObjectOfType<VRC.UI.Elements.QuickMenu>() == null) yield return null;
             
             SetupPostQMInit();
         }
