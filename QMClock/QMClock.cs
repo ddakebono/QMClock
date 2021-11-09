@@ -14,7 +14,7 @@ namespace QMClock
 {
     public static class BuildInfo
     {
-        public const string Name = "QMClock"; // Name of the Mod.  (MUST BE SET)
+        public const string Name = "BTKSAQMClock"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "DDAkebono#0001"; // Author of the Mod.  (Set as null if none)
         public const string Company = "BTK-Development"; // Company that made the Mod.  (Set as null if none)
         public const string Version = "1.0.0"; // Version of the Mod.  (MUST BE SET)
@@ -29,7 +29,7 @@ namespace QMClock
         private readonly string _prefs12HourClock = "12HourClock";
         private readonly string _prefsShowsSeconds = "ShowSeconds";
 
-        private const float SizePerElement = 140f;
+        private const float SizePerElement = 150f;
         
         private TMP_Text _clock;
         
@@ -129,7 +129,7 @@ namespace QMClock
             Image panelBG = _panelRoot.AddComponent<Image>();
             panelBG.sprite = background.sprite;
             panelBG.color = new Color(0, 0, 0, .95f);
-            Object.Destroy(debugPanelBG);
+            Object.DestroyImmediate(debugPanelBG);
 
             //Setup HorizontalLayoutGroup
             HorizontalLayoutGroup horizLayout = _panelRoot.AddComponent<HorizontalLayoutGroup>();
