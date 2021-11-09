@@ -14,7 +14,7 @@ namespace QMClock
 {
     public static class BuildInfo
     {
-        public const string Name = "BTKSAQMClock"; // Name of the Mod.  (MUST BE SET)
+        public const string Name = "QMClock"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "DDAkebono#0001"; // Author of the Mod.  (Set as null if none)
         public const string Company = "BTK-Development"; // Company that made the Mod.  (Set as null if none)
         public const string Version = "1.0.0"; // Version of the Mod.  (MUST BE SET)
