@@ -17,7 +17,7 @@ namespace QMClock
         public const string Name = "QMClock"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "DDAkebono#0001"; // Author of the Mod.  (Set as null if none)
         public const string Company = "BTK-Development"; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "1.0.1"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "1.0.2"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
     
@@ -115,7 +115,7 @@ namespace QMClock
             }
 
             _panelRoot = debugPanelComponent.field_Public_GameObject_0;
-            _pingText = debugPanelComponent.field_Public_TextBinding_0.gameObject;
+            _pingText = debugPanelComponent.field_Public_ListCountBinding_0.gameObject;
             GameObject debugPanelBG = _panelRoot.transform.Find("Background").gameObject;
 
             if (debugPanelBG == null || _pingText == null)
