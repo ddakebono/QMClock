@@ -17,7 +17,7 @@ namespace QMClock
         public const string Name = "QMClock"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "DDAkebono#0001"; // Author of the Mod.  (Set as null if none)
         public const string Company = "BTK-Development"; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "1.0.2"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "1.0.3"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
     
@@ -29,7 +29,7 @@ namespace QMClock
         private readonly string _prefs12HourClock = "12HourClock";
         private readonly string _prefsShowsSeconds = "ShowSeconds";
 
-        private const float SizePerElement = 150f;
+        private const float SizePerElement = 160f;
         
         private TMP_Text _clock;
         
@@ -93,6 +93,10 @@ namespace QMClock
             if (_panelRoot == null && _pingText == null) return null;
             
             GameObject newElement = Object.Instantiate(_pingText, _panelRoot.transform, false);
+            
+            var listBinding = newElement.GetComponent<ListCountBinding>();
+            if(listBinding!=null)
+                Object.DestroyImmediate(listBinding);
 
             newElement.name = elementName;
 
@@ -106,7 +110,7 @@ namespace QMClock
         
         private bool SetupDebugInfoPanelAndReferences()
         {
-            DebugInfoPanel debugPanelComponent = Object.FindObjectOfType<DebugInfoPanel>();
+            DebugInfoPanel debugPanelComponent = GameObject.Find("UserInterface").GetComponentInChildren<DebugInfoPanel>(true);
 
             if (debugPanelComponent == null)
             {
@@ -175,10 +179,8 @@ namespace QMClock
         
         private IEnumerator WaitForQMInit()
         {
-            Log.Msg("WaitForQMInit");
-            
             while (UIManager.field_Private_Static_UIManager_0 == null) yield return null;
-            while (Object.FindObjectOfType<VRC.UI.Elements.QuickMenu>() == null) yield return null;
+            while (GameObject.Find("UserInterface").GetComponentInChildren<VRC.UI.Elements.QuickMenu>(true) == null) yield return null;
             
             SetupPostQMInit();
         }

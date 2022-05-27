@@ -32,8 +32,8 @@ using MelonLoader;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]
 [assembly: MelonInfo(typeof(QMClock.QMClock), QMClock.BuildInfo.Name, QMClock.BuildInfo.Version, QMClock.BuildInfo.Author, QMClock.BuildInfo.DownloadLink)]
 [assembly: MelonGame("VRChat", "VRChat")]
 [assembly: MelonColor(System.ConsoleColor.Magenta)]
